@@ -46,13 +46,19 @@ function App() {
       fetch('http://localhost:8000/api/login', {
         method: 'POST',
         body: JSON.stringify(submittedData),
-      }).then((res) => {
-        // if user checked Remember Me
-        // server should return a JWT token and store it with the email to localstorage
-        if (rememberMe) {
-          console.log('store email to local storage');
-        }
-      });
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then((res) => {
+          console.log(res);
+          // if user checked Remember Me
+          // server should return a JWT token and store it with the email to localstorage
+          if (rememberMe) {
+            console.log('store email to local storage');
+          }
+        })
+        .catch((res) => {
+          console.log('Server error');
+        });
 
       //reset the form
       emailReset();
