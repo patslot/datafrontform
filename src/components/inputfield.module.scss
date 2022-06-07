@@ -1,0 +1,20 @@
+@import '../color';
+
+.inputcontainer {
+  width: 100%;
+  margin: 1em 0;
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  input[type='email'],
+  input[type='password'] {
+    width: 100%;
+    height: 3em;
+    border: 1px solid $input-border;
+    padding: 1em;
+  }
+  .error {
+    color: $com-green;
+  }
+}
